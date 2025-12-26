@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BugVision AI — Prediction Result</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #171726 0%, #23233a 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 25px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+
+        .preview-img {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 15px;
+        }
+
+        .label-box {
+            background: rgba(255,255,255,0.12);
+            padding: 12px;
+            border-radius: 15px;
+            margin-bottom: 8px;
+        }
+
+        .bar-container {
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: #00e6b8;
+            border-radius: 12px;
+        }
+
+        .btn-custom {
+            background: #00e6b8;
+            color: black;
+            border-radius: 12px;
+            font-weight: bold;
+            padding: 12px 20px;
+        }
+        .btn-custom:hover {
+            background: #00cba3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-4 fw-bold">🔍 Prediction Result</h1>
+
+    <div class="glass-card">
+
+        <div class="row">
+
+            <!-- LEFT: Uploaded Image & Heatmap -->
+            <div class="col-md-6">
+                <h4 class="mb-3">🖼 Uploaded Screenshot</h4>
+                <img src="{{ image }}" class="preview-img">
+
+                <h4 class="mt-4 mb-3">🔥 Grad-CAM Heatmap</h4>
+                <img src="{{ heatmap }}" class="preview-img">
+            </div>
+
+            <!-- RIGHT: Prediction -->
+            <div class="col-md-6">
+
+                <div class="label-box">
+                    <h3>Predicted Class: <b style="color:#00e6b8;">{{ predicted_class }}</b></h3>
+                </div>
+
+                <div class="label-box">
+                    <h4>Confidence: <b>{{ confidence }}%</b></h4>
+                </div>
+
+                <h4 class="mt-4 mb-3">📊 Class Probability Distribution</h4>
+
+               
+
+   <!-- JINJA LOOP START -->
+{% for item in combined %}
+    {% set cls = item[0] %}
+    {% set prob = item[1] %}
+
+    <p class="mb-1"><b>{{ cls }} — {{ prob }}%</b></p>
+    <div class="bar-container">
+        <div class="bar-fill" style="width: {{ prob }}%;"></div>
+    </div>
+{% endfor %}
+
+
+
+
+
+
+
+                <div class="text-center mt-4">
+                    <a href="/" class="btn btn-light btn-lg">⬅ Upload Another</a>
+                    <a href="/dashboard" class="btn btn-custom btn-lg">📊 View Dashboard</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
