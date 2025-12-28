@@ -1,4 +1,5 @@
 🐞 BugVision AI
+
 Intelligent Bug Screenshot Classification & Explainability System
 
 BugVision AI is a production-style deep learning system that automatically classifies software bug screenshots into real-world error categories and explains why the model made each decision using visual heatmaps.
