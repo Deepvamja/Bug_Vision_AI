@@ -1,93 +1,104 @@
 🐞 BugVision AI
 Intelligent Bug Screenshot Classification & Explainability System
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?logo=tensorflow)
-![Flask](https://img.shields.io/badge/Flask-Web%20App-black?logo=flask)
-![Computer Vision](https://img.shields.io/badge/Computer%20Vision-CNN-green)
-![Explainable AI](https://img.shields.io/badge/Explainable%20AI-Grad--CAM-purple)
-
 BugVision AI is a production-style deep learning system that automatically classifies software bug screenshots into real-world error categories and explains why the model made each decision using visual heatmaps.
 
-🚨 The Problem (Real & Industrial)
+🚀 The Problem (Real & Industrial):
 
-In real software teams:
+In modern software teams:
 
-Bug reports arrive as screenshots
+QA engineers report bugs using screenshots
 
-Engineers manually inspect & triage them
+Developers manually read and triage bugs
 
-High volume leads to slow debugging and misclassification
+Large teams receive hundreds of screenshots daily
 
-No visibility into recurring bug patterns
+Bug categorization becomes slow, error-prone, and inconsistent
 
-❌ Manual triage
-❌ Delayed fixes
-❌ Inconsistent categorization
+❌ Manual triaging
+❌ Delayed debugging
+❌ No visibility into recurring bug patterns
+
+BugVision AI solves this by automating bug classification using computer vision.
+
 
 💡 The Solution
 
-BugVision AI automates bug triaging using computer vision.
+🧠 What BugVision AI Does
 
-It:
+✔️ Accepts bug screenshots as input
 
-Accepts bug screenshots
+✔️ Classifies them into 6 real-world error types
 
-Classifies them into 6 real-world error types
+✔️ Generates confidence scores
 
-Assigns confidence scores
+✔️ Explains predictions using Grad-CAM heatmaps
 
-Generates Grad-CAM heatmaps to explain predictions
+✔️ Stores prediction history
 
-Logs predictions and displays analytics
+✔️ Provides an analytics dashboard
 
-Runs as a deployed web application
+✔️ Runs as a full-stack deployed application
 
-This is not a notebook demo — it’s a complete system.
+
 
 🏷️ Supported Bug Categories
 
-UI Error – layout, buttons, UI breakage
+Class	        Description
 
-Database Error – SQL, DB connection failures
+UI_Error	Layout issues, misaligned buttons, broken UI elements
 
-Network Error – timeouts, connectivity issues
+Database_Error	SQL errors, DB connection failures
 
-Rendering Error – blank screens, visual glitches
+Network_Error	Timeouts, connectivity issues
 
-Crash Error – fatal app crashes
+Rendering_Error	Graphics glitches, blank screens
 
-Other Error – rare or mixed cases
+Crash_Error	App crashes, fatal error screens
 
-✨ Key Features (What Makes It Stand Out)
+Other_Error	Unclassified or rare error types
 
-CNN-based image classification
 
-Explainable AI (Grad-CAM) — not a black box
+✨ Key Features
 
-End-to-end ML inference pipeline
+🧠 Automated Bug Triage
 
-Flask-based production web app
+Automatically categorizes bug screenshots into real-world error types, eliminating manual inspection and reducing triage time.
 
-Prediction logging & analytics dashboard
+🔍 Explainable AI for Trust & Debugging
 
-Cloud deployment with real runtime constraints
+Generates Grad-CAM heatmaps that visually explain model decisions, helping engineers verify predictions instead of blindly trusting AI.
 
-Most student projects stop at training.
-This project goes all the way to deployment and failure handling.
+⚙️ Production-Ready Inference Pipeline
 
-🧠 System Flow
-Screenshot Upload
-        ↓
-Image Preprocessing (256×256)
-        ↓
-CNN Model Inference
-        ↓
-Softmax Probabilities
-        ↓
+Implements a complete ML inference workflow including preprocessing, prediction, confidence scoring, and result rendering — mirroring real production systems.
+
+📊 Engineering Analytics Dashboard
+
+Tracks prediction history and class distributions, enabling teams to identify recurring bug patterns and systemic issues.
+
+🗃️ Persistent Prediction Logging
+
+Stores inference results with timestamps, supporting auditing, debugging, and future model improvements.
+
+
+🧩 System Architecture
+
+User Screenshot
+      ↓
+Image Preprocessing (256×256 RGB)
+      ↓
+CNN-based Deep Learning Model
+      ↓
+Softmax Probability Distribution
+      ↓
 Grad-CAM Explainability
-        ↓
-Flask App + Dashboard
+      ↓
+Flask Web Application
+      ↓
+Prediction Logging + Dashboard
+
+
 
 🛠️ Tech Stack
 
@@ -117,12 +128,3 @@ HOW TO RUN LOCALLY
    http://127.0.0.1:5000
 
 
-PROJECT STRUCTURE
------------------
-- app.py (backend)
-- templates/ (HTML files)
-- static/uploads (uploaded screenshots)
-- static/heatmaps (Grad-CAM heatmaps)
-- static/charts (training graphs)
-- model/bugvision_model.h5 (trained deep learning model)
-- predictions.db (prediction log database)
