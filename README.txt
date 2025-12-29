@@ -45,19 +45,19 @@ BugVision AI solves this by automating bug classification using computer vision.
 
 🏷️ Supported Bug Categories
 
-Class	        Description
+Class	               Description
 
-UI_Error	Layout issues, misaligned buttons, broken UI elements
+UI_Error	         Layout issues, misaligned buttons, broken UI elements
 
-Database_Error	SQL errors, DB connection failures
+Database_Error	   SQL errors, DB connection failures
 
-Network_Error	Timeouts, connectivity issues
+Network_Error	   Timeouts, connectivity issues
 
-Rendering_Error	Graphics glitches, blank screens
+Rendering_Error	   Graphics glitches, blank screens
 
-Crash_Error	App crashes, fatal error screens
+Crash_Error  	   App crashes, fatal error screens
 
-Other_Error	Unclassified or rare error types
+Other_Error	         Unclassified or rare error types
 
 
 ✨ Key Features
